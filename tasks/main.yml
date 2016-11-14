@@ -67,8 +67,6 @@
     group: root
     mode: 0644
   notify: restart varnish
-<<<<<<< HEAD
-=======
 
 - name: Ensure Varnish services are started enabled on startup.
   service:
@@ -77,4 +75,3 @@
     enabled: yes
   with_items: "{{ varnish_enabled_services | default([]) }}"
   when: varnish_enabled_services
->>>>>>> upstream_master
