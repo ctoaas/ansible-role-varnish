@@ -1,0 +1,12 @@
+---
+
+- name: Ensure APT HTTPS Transport is installed.
+  apt:
+    name: apt-transport-https
+    state: installed
+  when: ansible_distribution_release != "xenial"
+
+- name: Install Varnish.
+  apt:
+    name: "{{ varnish_package_name }}"
+    state: present
